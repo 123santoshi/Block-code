@@ -1,98 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index login page</title>
-    <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-        }
-        
-        body {
-            background: black;
-        }
-        
-        .header {
-            background: silver;
-            width: 100%;
-            padding: 10px;
-            margin: 0px;
-        }
-        
-        .header h1 {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .entrance {
-            border: 2px solid black;
-            height: auto;
-            padding: 10px;
-        }
-        
-        form {
-            margin: auto;
-            width: 300px;
-            padding: 10px;
-            text-align: center;
-            background: rgb(120, 172, 206);
-            border-radius: 10%;
-        }
-        
-        label {
-            color: red;
-            margin-left: 10px;
-        }
-        
-        input[type="text "],
-        input[type="number "],
-        input[type="email "] {
-            border-radius: 10%;
-            padding: 10px;
-        }
-        
-        button {
-            border-radius: 10%;
-            padding: 10px 30px;
-            background: pink;
-        }
-        
-        a {
-            padding: 12px;
-            text-decoration: none;
-        }
-        
-        input[type="text"]:hover,
-        input[type="email"]:hover,
-        input[type="number"]:hover,
-        button:hover {
-            background: pink;
-        }
-    </style>
+    <!--
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Movie Seat Booking</title>
 </head>
 
 <body>
-    <div class=" header">
-        <h1>Book My Show</h1>
-    </div><br/><br/><br/>
-    <div class=" entrance ">
-        <form action="./App.html">
-            <label>Enter username</label><br/><br/>
-            <input type="text " name="user " placeholder="enter your name " required><br/><br/>
-            <label>Enter Email</label><br/><br/>
-            <input type="email " name="email " placeholder=" enter your email " required><br/><br/>
-            <label>Enter Phone Number</label><br/><br/>
-            <input type="number " name="number " placeholder=" enter phone number " required><br/><br/><br/>
-            <button type="submit ">confirm your order</button>
-        </form>
+    <div class="movie-container">
+        <label>Select  a movie:</label>
+        <select id="movie">
+        <option value="500">Bramhastram (500 rs)</option>
+        <option value="300">Oke oka jivitham (300 rs)</option>
+        <option value="200">Tiru (200 rs)</option>
+        <option value="400">Sita Ramam ( 400 rs)</option>
+      </select><br/><br/>
+        <label>Enter No of seats :</label>
+        <select id="chooseseats">
+      <option value="1">One (1)</option>
+      <option value="2">Two (2) </option>
+      <option value="3">Three (3)</option>
+      <option value="4">Four (4)</option>
+      <option value="5">Five (5)</option>
+    </select>
 
     </div>
-    <script>
-    </script>
+
+    <ul class="showcase">
+        <li>
+            <div class="seat"></div>
+            <small>N/A</small>
+        </li>
+
+        <li>
+            <div class="seat selected"></div>
+            <small>Selected</small>
+        </li>
+
+        <li>
+            <div class="seat occupied"></div>
+            <small>Occupied</small>
+        </li>
+    </ul>
+
+    <div class="container">
+        <div class="screen">Movie displayed</div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+        </div>
+
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+        </div>
+    </div>
+
+    <p class="text">
+        You have selected <span id="count">0</span> seats for a price of $ <span id="total">0</span>
+    </p><br/><br/>
+    <a href="./details.html" class="proceed">Proceed  To Next</a>
+    <script src="./script.js"></script>
 </body>
 
 </html>
